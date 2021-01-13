@@ -54,13 +54,33 @@ class FakeDataDaoTest {
 
     @Test
     void updateUser() {
+        UUID idHayri = fakeDataDao.getAllUsers().get(0).getUserId();
+        User newHayri = new User(idHayri, "Hayri", "Aral", "hayriaral@mail.com", 35, User.Gender.MALE);
+        fakeDataDao.updateUser(newHayri);
+        Optional<User> user = fakeDataDao.getUserById(idHayri);
+
+        assertThat(user.isPresent()).isTrue();
+        assertThat(fakeDataDao.getAllUsers()).hasSize(1);
+        assertThat(user.get()).isEqualTo(newHayri);
     }
 
     @Test
     void deleteUser() {
+        UUID idHayri = fakeDataDao.getAllUsers().get(0).getUserId();
+        fakeDataDao.deleteUser(idHayri);
+
+        assertThat(fakeDataDao.getUserById(idHayri).isPresent()).isFalse();
+        assertThat(fakeDataDao.getAllUsers()).isEmpty();
     }
 
     @Test
     void insertUser() {
+        UUID newUserId = UUID.randomUUID();
+        User newUser = new User(newUserId, "user", "user", "user@mail.com", 20, User.Gender.FEMALE);
+        fakeDataDao.insertUser(newUserId, newUser);
+        List<User> users = fakeDataDao.getAllUsers();
+
+        assertThat(users).hasSize(2);
+        assertThat(fakeDataDao.getUserById(newUserId)).get().isEqualTo(newUser);
     }
 }

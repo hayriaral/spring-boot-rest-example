@@ -1,6 +1,6 @@
 # Spring Boot REST Example
 
-![GitHub top language](https://img.shields.io/github/languages/top/hayriaral/spring-boot-rest-example?style=for-the-badge)![Lines of code](https://img.shields.io/tokei/lines/github/hayriaral/spring-boot-rest-example?style=for-the-badge)![GitHub last commit](https://img.shields.io/github/last-commit/hayriaral/spring-boot-rest-example?style=for-the-badge)[![GitHub license](https://img.shields.io/github/license/hayriaral/spring-boot-rest-example?style=for-the-badge)](https://github.com/hayriaral/spring-boot-rest-example/blob/master/LICENSE)
+![GitHub top language](https://img.shields.io/github/languages/top/hayriaral/spring-boot-rest-example?style=for-the-badge)	![Lines of code](https://img.shields.io/tokei/lines/github/hayriaral/spring-boot-rest-example?style=for-the-badge)	![GitHub last commit](https://img.shields.io/github/last-commit/hayriaral/spring-boot-rest-example?style=for-the-badge)	[![GitHub license](https://img.shields.io/github/license/hayriaral/spring-boot-rest-example?style=for-the-badge)](https://github.com/hayriaral/spring-boot-rest-example/blob/master/LICENSE)
 
 ## Table of contents
 
@@ -15,9 +15,9 @@
 
 ## Introduction
 
-Welcome to personal Java workspace. I created this repo to practice with Spring framework.
+Welcome to my own Java workspace. I created this repo to practice with Spring framework. I referred to the awesome Udemy course which named [Spring Boot For Software Engineers](https://www.udemy.com/share/101Bv2BEQSdlxTQ3Q=/) for this repo.
 
-Please, feel free to use the repo, I hope it will help you somehow
+Please, feel free to use the repo, I hope it will help you somehow.
 
 I will be appreciated any feedback that I received.
 
@@ -94,9 +94,9 @@ I will be appreciated any feedback that I received.
    ```java
    public class FakeDataDao implements UserDao {
    
-       private static Map<UUID, User> fakeDatabase;
+       private Map<UUID, User> fakeDatabase;
    
-       static {
+       public FakeDataDao() {
            fakeDatabase = new HashMap<>();
            UUID userId = UUID.randomUUID();
            fakeDatabase.put(userId, new User(userId, "Hayri", "Aral", "email@example.com", 27, User.Gender.MALE));
@@ -207,9 +207,9 @@ I will be appreciated any feedback that I received.
 
 ## Unit test
 
-1. Create an unit test for `FakeDataDao` class through `Ctrl+Shift+T` shortcut. Select **JUnit5** testing library, mark **setUp/@Before**, and all members of the class. Click **OK**.
+1. Create an unit test for `FakeDataDao` class through `Ctrl+Shift+T` shortcut when you are in the class. Select **JUnit5** testing library, mark **setUp/@Before**, and all members of the class. Click **OK**.
 
-2. `setUp()` method will be invoked before every single test. Create an object for tests.
+2. Declare a `FakeDataDao` object for the tests. Instantiate the object in `setUp()` method. This method will be invoked every single test.
 
    ```java
    class FakeDataDaoTest {
@@ -224,6 +224,12 @@ I will be appreciated any feedback that I received.
        //Test methods...
    }
    ```
+
+3. Complete the tests for `FakeDataDaoTest` class.
+
+4. Create an unit test for `UserService` class through `Ctrl+Shift+T` shortcut when you are in the class. Select **JUnit5** testing library, mark **setUp/@Before**, and all members of the class. Click **OK**.
+
+5. 
 
 
 ## References
