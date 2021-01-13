@@ -1,5 +1,7 @@
 # Spring Boot REST Example
 
+![GitHub top language](https://img.shields.io/github/languages/top/hayriaral/spring-boot-rest-example?style=for-the-badge)![Lines of code](https://img.shields.io/tokei/lines/github/hayriaral/spring-boot-rest-example?style=for-the-badge)![GitHub last commit](https://img.shields.io/github/last-commit/hayriaral/spring-boot-rest-example?style=for-the-badge)[![GitHub license](https://img.shields.io/github/license/hayriaral/spring-boot-rest-example?style=for-the-badge)](https://github.com/hayriaral/spring-boot-rest-example/blob/master/LICENSE)
+
 ## Table of contents
 
 1. [Introduction](#introduction)
@@ -13,7 +15,11 @@
 
 ## Introduction
 
+Welcome to personal Java workspace. I created this repo to practice with Spring framework.
 
+Please, feel free to use the repo, I hope it will help you somehow
+
+I will be appreciated any feedback that I received.
 
 ## Subjects
 
