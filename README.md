@@ -5,10 +5,11 @@
 1. [Introduction](#introduction)
 2. [Subjects](#subjects)
 3. [Getting started](#getting-started)
-4. [Development](#development-part-1)
+4. [Development Part 1](#development-part-1)
    1. [Create model and DAO layers](#create-model-and-dao-layers)
    2. [Create service layer](#create-service-layer)
-5. [References](#references)
+5. [Unit test](#unit-test)
+6. [References](#references)
 
 ## Introduction
 
@@ -195,6 +196,26 @@
        public int insertUser(User user) {
            return userDao.insertUser(UUID.randomUUID(), user);
        }
+   }
+   ```
+
+## Unit test
+
+1. Create an unit test for `FakeDataDao` class through `Ctrl+Shift+T` shortcut. Select **JUnit5** testing library, mark **setUp/@Before**, and all members of the class. Click **OK**.
+
+2. `setUp()` method will be invoked before every single test. Create an object for tests.
+
+   ```java
+   class FakeDataDaoTest {
+   
+       private FakeDataDao fakeDataDao;
+   
+       @BeforeEach
+       void setUp() {
+           fakeDataDao = new FakeDataDao();
+       }
+       
+       //Test methods...
    }
    ```
 
