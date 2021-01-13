@@ -156,7 +156,7 @@
 
    * [@Repository](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/stereotype/Repository.html): Indicates that an annotated class is a "Repository", originally defined by Domain-Driven Design (Evans, 2003) as "a mechanism for encapsulating storage, retrieval, and search behavior which emulates a collection of objects". 
    * [@Service](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/stereotype/Service.html): Indicates that an annotated class is a "Service". This annotation serves as a specialization of [`@Component`](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/stereotype/Component.html), allowing for implementation classes to be autodetected through classpath scanning.
-   * [@Autowired](): Marks a constructor, field, setter method, or config method as to be autowired by Spring's dependency injection facilities.
+   * [@Autowired](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/beans/factory/annotation/Autowired.html): Marks a constructor, field, setter method, or config method as to be autowired by Spring's dependency injection facilities.
 
 3. Apply business logic into service layer.
 
@@ -198,3 +198,8 @@
    }
    ```
 
+
+## References
+
+* [Spring Boot For Software Engineers](https://www.udemy.com/share/101Bv2BEQSdlxTQ3Q=/)
+* [Public API documentation for the Spring Framework](https://docs.spring.io/spring-framework/docs/current/javadoc-api/overview-summary.html)
