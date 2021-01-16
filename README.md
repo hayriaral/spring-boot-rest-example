@@ -1,6 +1,6 @@
 # Spring Boot REST Example
 
-![GitHub top language](https://img.shields.io/github/languages/top/hayriaral/spring-boot-rest-example?style=for-the-badge)	![Lines of code](https://img.shields.io/tokei/lines/github/hayriaral/spring-boot-rest-example?style=for-the-badge)	![GitHub last commit](https://img.shields.io/github/last-commit/hayriaral/spring-boot-rest-example?style=for-the-badge)	[![GitHub license](https://img.shields.io/github/license/hayriaral/spring-boot-rest-example?style=for-the-badge)](https://github.com/hayriaral/spring-boot-rest-example/blob/master/LICENSE)
+![GitHub top language](https://img.shields.io/github/languages/top/hayriaral/spring-boot-rest-example?style=for-the-badge)	![Lines of code](https://img.shields.io/tokei/lines/github/hayriaral/spring-boot-rest-example?style=for-the-badge)	![GitHub repo size](https://img.shields.io/github/repo-size/hayriaral/spring-boot-rest-example)    ![GitHub last commit](https://img.shields.io/github/last-commit/hayriaral/spring-boot-rest-example?style=for-the-badge)	[![GitHub license](https://img.shields.io/github/license/hayriaral/spring-boot-rest-example?style=for-the-badge)](https://github.com/hayriaral/spring-boot-rest-example/blob/master/LICENSE)
 
 ## Table of contents
 
