@@ -5,13 +5,15 @@
 ## Table of contents
 
 1. [Introduction](#1-introduction)
-2. [Subjects](#2.subjects)
-3. [Getting started](#getting-started)
-4. [Development Part 1](#development-part-1)
+2. [Subjects](#2-subjects)
+3. [Getting started](#3-getting-started)
+4. [Development](#4-development)
    1. [Create model and DAO layers](#create-model-and-dao-layers)
    2. [Create service layer](#create-service-layer)
-5. [Unit test](#unit-test)
-6. [References](#references)
+5. [Testing](#5-testing)
+   1. [Unit test with JUnit](#unit-test-with-junit)
+   2. [Mocking objects with Mockito](#mocking-objects-with-mockito)
+6. [References](#6-references)
 
 ## 1. Introduction
 
@@ -37,7 +39,7 @@ I will be appreciated any feedback that I received.
 4. Mark **Jersey** and **Spring Web** dependencies though selecting  **Web** tab. Click **Next**.
 5. Set **Project name** and **Project location**, then click **Finish**.
 
-## 4. Development Part 1
+## 4. Development
 
 ### Create model and DAO layers
 
@@ -205,7 +207,7 @@ I will be appreciated any feedback that I received.
    }
    ```
 
-## Testing
+## 5. Testing
 
 ### Unit test with JUnit
 
@@ -289,10 +291,8 @@ I will be appreciated any feedback that I received.
 
 4. Will be completed later...
 
-## Create REST API layer
 
-
-## References
+## 6. References
 
 * [Spring Boot For Software Engineers](https://www.udemy.com/share/101Bv2BEQSdlxTQ3Q=/)
 * [Public API documentation for the Spring Framework](https://docs.spring.io/spring-framework/docs/current/javadoc-api/overview-summary.html)
