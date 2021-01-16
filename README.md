@@ -4,7 +4,7 @@
 
 ## Table of contents
 
-1. [Introduction](#introduction)
+1. [Introduction](#1.-introduction)
 2. [Subjects](#subjects)
 3. [Getting started](#getting-started)
 4. [Development Part 1](#development-part-1)
@@ -13,7 +13,7 @@
 5. [Unit test](#unit-test)
 6. [References](#references)
 
-## Introduction
+## 1. Introduction
 
 Welcome to my own Java workspace. I created this repo to practice with Spring framework. I referred to the awesome Udemy course which named [Spring Boot For Software Engineers](https://www.udemy.com/share/101Bv2BEQSdlxTQ3Q=/) for this repo.
 
@@ -21,7 +21,7 @@ Please, feel free to use the repo, I hope it will help you somehow.
 
 I will be appreciated any feedback that I received.
 
-## Subjects
+## 2. Subjects
 
 * Spring REST API
 * Spring dependency injection
@@ -29,7 +29,7 @@ I will be appreciated any feedback that I received.
 * Unit testing
 * Mockito
 
-## Getting started
+## 3. Getting started
 
 1. **File** > **New** > **Project**
 2. Select **Spring Initializer**, then choose a **Project SDK**, and initializer service URL as **default**. Click **Next**.
@@ -37,7 +37,7 @@ I will be appreciated any feedback that I received.
 4. Mark **Jersey** and **Spring Web** dependencies though selecting  **Web** tab. Click **Next**.
 5. Set **Project name** and **Project location**, then click **Finish**.
 
-## Development Part 1
+## 4. Development Part 1
 
 ### Create model and DAO layers
 
@@ -205,7 +205,9 @@ I will be appreciated any feedback that I received.
    }
    ```
 
-## Unit test
+## Testing
+
+### Unit test with JUnit
 
 1. Create an unit test for `FakeDataDao` class through `Ctrl+Shift+T` shortcut when you are in the class. Select **JUnit5** testing library, mark **setUp/@Before**, and all members of the class. Click **OK**.
 
@@ -227,9 +229,67 @@ I will be appreciated any feedback that I received.
 
 3. Complete the tests for `FakeDataDaoTest` class.
 
-4. Create an unit test for `UserService` class through `Ctrl+Shift+T` shortcut when you are in the class. Select **JUnit5** testing library, mark **setUp/@Before**, and all members of the class. Click **OK**.
+### Mocking objects with Mockito
 
-5. 
+1. Create an unit test for `UserService` class through `Ctrl+Shift+T` shortcut when you are in the class. Select **JUnit5** testing library, mark **setUp/@Before**, and all members of the class. Click **OK**.
+
+2. Declare a `FakeDataDao` object with `@Mock` annotation and `UserService` object for the tests. Instantiate the object of `UserService` with mock in `setUp()` method. This method will be invoked every single test.
+
+   ```java
+   class UserServiceTest {
+   
+       @Mock
+       private FakeDataDao fakeDataDao;
+       private UserService userService;
+   
+       @BeforeEach
+       void setUp() {
+           MockitoAnnotations.openMocks(this);
+           userService = new UserService(fakeDataDao);
+       }
+       
+       //Test methods...
+   }
+   ```
+
+3. Complete the tests for `UserServiceTest` class. `getAllUsers()` shown below as an example.
+
+   ```java
+   class UserServiceTest {
+   
+       //...
+       
+       @Test
+       void getAllUsers() {
+           UUID idJonSnow = UUID.randomUUID();
+           User userJonSnow = new User(idJonSnow, "Jon", "Snow", "jonsnow@mail.com", 30, User.Gender.MALE);
+           ImmutableList<User> users = new ImmutableList.Builder<User>()
+                   .add(userJonSnow)
+                   .build();
+   
+           given(fakeDataDao.getAllUsers()).willReturn(users);
+           List<User> allUsers = userService.getAllUsers();
+   
+           assertThat(allUsers).hasSize(1);
+   
+           //Check if the data is correct.
+           User user = allUsers.get(0);
+   
+           AssertionsForClassTypes.assertThat(user.getFirstName()).isEqualTo("Jon");
+           AssertionsForClassTypes.assertThat(user.getLastName()).isEqualTo("Snow");
+           AssertionsForClassTypes.assertThat(user.getEmail()).isEqualTo("jonsnow@mail.com");
+           AssertionsForClassTypes.assertThat(user.getAge()).isEqualTo(30);
+           AssertionsForInterfaceTypes.assertThat(user.getGender()).isEqualTo(User.Gender.MALE);
+           AssertionsForInterfaceTypes.assertThat(user.getUserId()).isNotNull();
+       }
+       
+       //...
+   }
+   ```
+
+4. Will be completed later...
+
+## Create REST API layer
 
 
 ## References
