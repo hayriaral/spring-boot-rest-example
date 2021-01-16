@@ -4,7 +4,7 @@
 
 ## Table of contents
 
-1. [Introduction](#1.introduction)
+1. [Introduction](#1-introduction)
 2. [Subjects](#2.subjects)
 3. [Getting started](#getting-started)
 4. [Development Part 1](#development-part-1)
@@ -13,7 +13,7 @@
 5. [Unit test](#unit-test)
 6. [References](#references)
 
-## 1.Introduction
+## 1. Introduction
 
 Welcome to my own Java workspace. I created this repo to practice with Spring framework. I referred to the awesome Udemy course which named [Spring Boot For Software Engineers](https://www.udemy.com/share/101Bv2BEQSdlxTQ3Q=/) for this repo.
 
